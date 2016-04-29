@@ -69,11 +69,11 @@ var invitees = { adults: [{
 
 // 4. Access Penny's dinner choice (this will be the second item in his dinnerChoice array)
 console.log('Question 4');
-console.log(invitees.adults[0].dinnerChoice);
+console.log(invitees.adults[0].dinnerChoice[1]);
 
 // 5. Access Pablo's table number.
 console.log('Question 5');
-console.log(invitees.children[1].allergies);
+console.log(invitees.children[1].allergies[0]);
 
 // 6. Access Lauren's seating specialConsideration.
 console.log('Question 6');
@@ -92,12 +92,9 @@ console.log(invitees.children[2].allergies);
 // and has selected ________ as her dessert."
 
 console.log('Question 9');
-var laurenDinner = {//need to somehow pull laurenDinner down in console.log ??
-  appetizer: soup,
-  dinner: chicken,
-  dessert: ice cream
-};
-console.log(("Laurens appetizer is "+ appetizer.)("She will be eating " + dinner) ("for dinner and has selected " + dessert) ("as her dessert."));
+
+var laurenDinner =
+console.log("Lauren\'s appetizer is "+ (invitees.adults[2].dinnerChoice[0]) + ". She will be eating " + (invitees.adults[2].dinnerChoice[1]) + " for dinner and has selected " + (invitees.adults[2].dinnerChoice[2]) + " as her dessert.");
 
 // 10. Create an empty object called "jsWorkshop" using Constructor Notation.
 
@@ -140,57 +137,53 @@ console.log(books);
 //     Insert the three objects into the "books" array.
 
 console.log('Question 15');
-
-var fictionBook12345 = {
+var books = {
+ fictionBook12345: {
   title: "Gone With The Wine",
   author: "Dionysis",
   numberOfPages: "324",
   price: "$349.00",
-};
-var romComBook12345 = {
+},
+ romComBook12345: {
   title: "Singled Out",
   author: "Cupid",
   numberOfPages: "12",
   price: "$12.95",
-};
-var sciFiBook12345 = {
+},
+ sciFiBook12345: {
   title: "Beyond Boba Fett",
   author: "Jedi Solo",
   numberOfPages: "1200",
   price: "$122.95",
+},
 };
-console.log(romComBook12345);
-console.log(sciFiBook12345);
-console.log(fictionBook12345);
+console.log(books);
 
 // 16. Access the author of the first book.
 
-console.log('Question 16');
+console.log('Question 16');//THIS IS WRONG NOW
+console.log(books.fictionBook12345.author)
 
-console.log(fictionBook12345.author);
+//console.log(fictionBook12345.author);
 
 // 17. Get the length of the author the the third book.
 
-console.log('Question 17');
+//All questions below need to be referenced to books now that question 14 has no vars
 
-console.log(sciFiBook12345.author.length);
+console.log('Question 17');
+console.log(books.sciFiBook12345.author.length);
 
 // 18. To each book object variable, add a key of "dateRead" with a value of the year you read the book.
 //     (Go ahead and make this up, too. Get wild.)
 
-console.log('Question 18');
-
-fictionBook12345.dateRead = "October 12, 1952",
-romComBook12345.dateRead = "February 14, 1978",
-sciFiBook12345.dateRead = "June 14, 2008",
-console.log(fictionBook12345);
-console.log(romComBook12345);
-console.log(sciFiBook12345);
+console.log('Question 18');//is there a way to run this w/o adding each book?
+books.fictionBook12345['Date Read'] = "June 14 1994";
+books.romComBook12345['Date Read'] = "Oct 12 1999";
+books.sciFiBook12345['Date Read'] = "Nov 30 2000";
+console.log(books);
 
 // 19. Remove the second book from the books Array.
 
 console.log('Question 19');
-var bookDelete = new Object();
-romComBook12345 = bookDelete;
-delete bookDelete;
-console.log(romComBook12345);
+books.romComBook12345 = ('');
+console.log(books);
